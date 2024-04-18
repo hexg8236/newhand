@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings
+        xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <!-- 本地仓库 -->
+    <localRepository>D:\DevelopEnv\sdk\repository</localRepository>
+    <!-- 配置私服中deploy的账号 -->
+    <servers>
+        <server>
+            <id>releases</id>
+            <username>admin</username>
+            <password>Aa123456</password>
+        </server>
+        <server>
+            <id>snapshots</id>
+            <username>admin</username>
+            <password>Aa123456</password>
+        </server>
+    </servers>
+    <!-- 使用阿里云maven镜像，排除私服资源库 -->
+    <mirrors>
+        <mirror>
+            <id>mirror</id>
+            <mirrorOf>central,jcenter,!sl-releases,!sl-snapshots</mirrorOf>
+            <name>mirror</name>
+            <url>https://maven.aliyun.com/nexus/content/groups/public</url>
+        </mirror>
+        <mirror>
+            <id>newhand</id>
+            <mirrorOf>central,jcenter,!sl-releases,!sl-snapshots</mirrorOf>
+            <name>newhand</name>
+            <url>http://192.168.1.9:8081/repository/maven-releases</url>
+        </mirror>
+    </mirrors>
+    <profiles>
+    </profiles>
+    <activeProfiles>
+    </activeProfiles>
+</settings>
