@@ -24,7 +24,6 @@
         <jjwt.version>0.9.1</jjwt.version>
         <nacos-config.version>0.2.10</nacos-config.version>
         <redisson.version>3.17.1</redisson.version>
-        <itcast-auth.version>1.0.8</itcast-auth.version>
         <aspectj.version>1.9.7</aspectj.version>
         <eaglemap.version>1.0</eaglemap.version>
         <hikaricp.version>4.0.3</hikaricp.version>
@@ -112,11 +111,6 @@
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>${hikaricp.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.itheima.em.auth</groupId>
-                <artifactId>itcast-auth-spring-boot-starter</artifactId>
-                <version>${itcast-auth.version}</version>
             </dependency>
             <!--jvm进程缓存-->
             <dependency>
