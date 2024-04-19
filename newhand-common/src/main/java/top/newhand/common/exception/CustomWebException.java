@@ -1,5 +1,6 @@
 package top.newhand.common.exception;
 
+import lombok.Data;
 import top.newhand.common.enums.BaseEnum;
 import top.newhand.common.enums.BaseExceptionEnum;
 
@@ -9,7 +10,7 @@ import top.newhand.common.enums.BaseExceptionEnum;
  * @Since 2024/4/18 20:25
  * @description
  **/
-
+@Data
 public class CustomWebException extends RuntimeException {
     /**
      * 自定义异常
@@ -19,7 +20,7 @@ public class CustomWebException extends RuntimeException {
     private String msg;
     // 业务状态码，规则：4位数，从1001开始递增
     private int code = 1;
-    //http状态码，按照http协议规范，如：200,201,400等
+    // http状态码，按照http协议规范，如：200,201,400等
     private int status = 200;
 
     public CustomWebException(BaseEnum baseEnum) {
@@ -39,6 +40,7 @@ public class CustomWebException extends RuntimeException {
         this.msg = errorEnum.getValue();
         this.code = errorEnum.getCode();
     }
+
     public CustomWebException(BaseExceptionEnum errorEnum, Throwable e) {
         super(errorEnum.getValue(), e);
         this.msg = errorEnum.getValue();
@@ -49,6 +51,7 @@ public class CustomWebException extends RuntimeException {
         super(msg);
         this.msg = msg;
     }
+
     public CustomWebException(String msg, Throwable e) {
         super(msg, e);
         this.msg = msg;
@@ -78,7 +81,4 @@ public class CustomWebException extends RuntimeException {
         this.code = code;
         this.status = status;
     }
-
-
-
 }
